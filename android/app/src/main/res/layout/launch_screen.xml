@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:backgroundTint="#000000"
+
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/sport1"
+        android:scaleType="center"
+        android:src="@drawable/launch_screen"
+        android:backgroundTint="#000000"
+
+        android:background="#000000"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sport1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#000000"
+        android:backgroundTint="#000000"
+        android:scaleType="center"
+        android:src="@drawable/bymoveo" />
+</RelativeLayout>
