@@ -7,7 +7,7 @@ const VodScreen = () => {
     <View>
       <Text>vod</Text>
       <Button
-        title="home"
+        title="insideScreen"
         onPress={() => RootNavigation.navigate('insideScreen')}
       />
     </View>

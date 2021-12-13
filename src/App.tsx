@@ -12,16 +12,18 @@ import welcomeScreen from './features/welcome/welcomeScreen';
 
 import {createNativeStackNavigator as navigatorStack} from '@react-navigation/native-stack';
 import loginScreen from './features/login/loginScreen';
+import insideScreen from './features/insideScreen/insideScreen';
 
 const Stack = navigatorStack();
 
 export default class App extends React.Component {
+  static navigationOptions: {};
   render() {
     if (Platform.OS) {
       StatusBar.setBarStyle('light-content');
     }
     const onNavigationReady = () => {
-      SplashScreen.hide(); // just hide the splash screen after navigation ready
+      SplashScreen.hide(); // just hide the splash screen after nasvigation ready
     };
 
     // SplashScreen.hide();
@@ -36,6 +38,19 @@ export default class App extends React.Component {
             screenOptions={{headerShown: false}}>
             <Stack.Screen component={welcomeScreen} name="welcomeScreen" />
             <Stack.Screen component={AppNavigation} name="AppNavigation" />
+            <Stack.Screen
+              component={insideScreen}
+              options={{
+                headerShown: true,
+                headerStyle: {
+                  backgroundColor: 'rgb(20,20,20)',
+                },
+                headerTitleStyle: {
+                  color: 'white',
+                },
+              }}
+              name="insideScreen"
+            />
           </Stack.Navigator>
 
           {/* <AppNavigation /> */}
