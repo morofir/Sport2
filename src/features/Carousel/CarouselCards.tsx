@@ -58,7 +58,7 @@ const CarouselCards = () => {
         style={index === 2 ? styles.getMeIn : {display: 'none'}}
         // onPress={onPress}
       >
-        <Text>קח אותי פנימה</Text>
+        <Text style={{fontSize: 22}}>קח אותי פנימה</Text>
       </TouchableOpacity>
     </View>
   );
