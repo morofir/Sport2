@@ -7,18 +7,7 @@ export const SLIDER_WIDTH = Dimensions.get('window').width;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);
 export const windowHeight = Dimensions.get('window').height;
 
-const checkFinalSlide = async (index: number) => {
-  try {
-    if (index === 2) {
-      await AsyncStorage.setItem('@viewdOnboarding', 'true');
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
 const CarouselCardItem = ({item, index}: any) => {
-  checkFinalSlide(index);
-
   return (
     <View style={styles.container} key={index}>
       <FastImage

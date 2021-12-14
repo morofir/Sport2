@@ -12,7 +12,6 @@ import Home from '../../assets/svg/Home';
 import LiveScreen from '../features/liveScreen/live';
 import VodScreen from '../features/vodScreen/vod';
 import scoreScreen from '../features/scoreScreen/score';
-
 const Tab = createBottomTabNavigator();
 
 const AppNavigation = () => {

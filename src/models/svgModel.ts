@@ -4,6 +4,12 @@ export interface ArrowLeftProps {
   height?: number;
 }
 
+export interface ArrowRightProps {
+  color?: string;
+  width?: number;
+  height?: number;
+}
+
 export interface HamMenuProps {
   color?: string;
   width?: number;

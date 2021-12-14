@@ -1,14 +1,18 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  StatusBar,
-  TouchableOpacity,
-} from 'react-native';
+import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import ArrowRight from '../../assets/svg/ArrowRight';
 import * as RootNavigation from '../navigation/RootNavigation';
 
-const Header = () => {
+const Header = (props: {canGoBack: boolean | undefined}) => {
+  const handleGoBack = () => {
+    try {
+      RootNavigation.goBack();
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  };
+  console.log('props: ', props);
+
   return (
     <View style={styles.viewContainer}>
       <TouchableOpacity onPress={() => RootNavigation.navigate('VOD')}>
@@ -22,22 +26,31 @@ const Header = () => {
         style={styles.imageContainer}
         source={require('../../assets/images/sport1small.png')}
       />
+      <TouchableOpacity
+        onPress={handleGoBack}
+        style={props.canGoBack ? styles.arrowRight : {display: 'none'}}>
+        <ArrowRight width={25} height={25} color={'white'} />
+      </TouchableOpacity>
     </View>
   );
 };
 const styles = StyleSheet.create({
   viewContainer: {
-    padding: 30,
+    padding: 28,
     flexDirection: 'row',
     backgroundColor: 'rgb(20,20,20)',
   },
   imageContainer: {
     marginTop: 20,
-    marginStart: 100, ///?precentage?
+    marginStart: 90,
   },
   rightImage: {
     marginRight: 10,
     marginTop: 20,
+  },
+  arrowRight: {
+    marginTop: 20,
+    marginStart: 100,
   },
 });
 

@@ -11,13 +11,24 @@ import Carousel, {Pagination} from 'react-native-snap-carousel';
 import CarouselCardItem, {SLIDER_WIDTH, ITEM_WIDTH} from './CarouselCardItem';
 import cdata from './cdata';
 import * as RootNavigation from '../../navigation/RootNavigation';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CarouselCards = () => {
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef(null);
 
+  const isPressedEntrance = async () => {
+    try {
+      await AsyncStorage.setItem('@viewdOnboarding', 'true');
+      console.log('navigate home!');
+      RootNavigation.navigate('AppNavigation');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, alignItems: 'center'}}>
       <TouchableOpacity
         style={{padding: Platform.OS === 'ios' ? 15 : 5}}
         onPress={() => RootNavigation.navigate('AppNavigation')}>
@@ -55,10 +66,10 @@ const CarouselCards = () => {
         tappableDots={true}
       />
       <TouchableOpacity
-        style={index === 2 ? styles.getMeIn : {display: 'none'}}
-        // onPress={onPress}
+        style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}
+        onPress={isPressedEntrance} //clear async storage
       >
-        <Text style={{fontSize: 22}}>קח אותי פנימה</Text>
+        <Text style={styles.letMeIn}>קחו אותי פנימה</Text>
       </TouchableOpacity>
     </View>
   );
@@ -68,12 +79,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  getMeIn: {
-    alignItems: 'center',
+
+  RectangleShapeView: {
+    width: 180,
+    height: 46,
+    backgroundColor: 'rgb(2,247,13)',
+    marginBottom: 10,
+  },
+  letMeIn: {
+    fontFamily: 'NarkissBlock-Regular',
+    fontSize: 22,
+    alignSelf: 'center',
     padding: 10,
-    backgroundColor: 'rgb (2,247,132)',
-    borderWidth: 1,
-    bordercolor: 'rgb (2,247,132)',
+    fontWeight: 'bold',
   },
 });
 
