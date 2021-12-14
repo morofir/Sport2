@@ -1,16 +1,21 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import {Platform, SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 import Header from './components/Header';
 import {Provider} from 'react-redux';
 import {Store} from './store/Store';
 import FlashMessage from 'react-native-flash-message';
 import AppNavigation from './navigation/AppNavigation';
-import {CommonActions, NavigationContainer} from '@react-navigation/native';
+import {
+  CommonActions,
+  NavigationContainer,
+  useNavigation,
+} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import {navigationRef, goBack} from './navigation/RootNavigation';
 import welcomeScreen from './features/welcome/welcomeScreen';
 import {createNativeStackNavigator as navigatorStack} from '@react-navigation/native-stack';
 import insideScreen from './features/insideScreen/insideScreen';
+import {Screen} from 'react-native-screens';
 
 const Stack = navigatorStack();
 
@@ -22,20 +27,32 @@ export default class App extends React.Component {
     const onNavigationReady = () => {
       SplashScreen.hide(); // hide the splash screen after navigation ready
     };
+    const route = navigationRef.current?.getRootState()
+      ? navigationRef.getCurrentRoute()?.name
+      : 'no';
+    console.log('route1', route);
 
     //safearea view?
     return (
       <NavigationContainer onReady={onNavigationReady} ref={navigationRef}>
         <Provider store={Store}>
           <FlashMessage position="top" />
-
+          {/* <Header canGoBack={true} /> */}
           <Stack.Navigator
             initialRouteName="Splash"
             screenOptions={{
               headerShown: true,
-              title: 'mor',
+              title: '?',
               header: () => (
-                <Header canGoBack={true} /> //navigationRef.current?.getRootState.name
+                <Header
+                  name={route}
+                  canGoBack={
+                    //check if the navigator is rendered
+                    navigationRef.current?.getRootState()
+                      ? navigationRef.canGoBack()
+                      : false
+                  }
+                />
               ),
             }}>
             <Stack.Screen component={welcomeScreen} name="welcomeScreen" />

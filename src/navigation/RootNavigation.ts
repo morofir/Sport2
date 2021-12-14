@@ -4,6 +4,7 @@ import {
   StackActions,
 } from '@react-navigation/native';
 import {CommonActions} from '@react-navigation/native';
+import {BackHandler} from 'react-native';
 
 export const navigationRef = createNavigationContainerRef();
 
@@ -18,7 +19,12 @@ export function navigate(
 
 export function goBack() {
   try {
-    navigationRef.dispatch(CommonActions.goBack());
+    if (navigationRef.canGoBack()) {
+      navigationRef.current?.dispatch(CommonActions.goBack());
+    } else {
+      BackHandler.exitApp(); //for android
+      console.log('exit');
+    }
   } catch (error) {
     console.error(error); //check root screen and handle TODO
   }

@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {useReducer, useState} from 'react';
 import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import ArrowRight from '../../assets/svg/ArrowRight';
 import * as RootNavigation from '../navigation/RootNavigation';
 
-const Header = (props: {canGoBack: boolean | undefined}) => {
+const Header = (props: {canGoBack: boolean; name: string}) => {
+  const [rerender, setRerender] = useState(false);
+
   const handleGoBack = () => {
     try {
+      setRerender(!rerender); //TODO delete
       RootNavigation.goBack();
+      setRerender(!rerender); //TODO delete
     } catch (error) {
       console.log('error: ', error);
     }
   };
-  console.log('props: ', props);
+  console.log(props.name);
 
   return (
     <View style={styles.viewContainer}>

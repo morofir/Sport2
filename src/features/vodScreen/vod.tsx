@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Text, Button} from 'react-native';
+import {Screen} from 'react-native-screens';
 import * as RootNavigation from '../../navigation/RootNavigation';
 
 const VodScreen = () => {

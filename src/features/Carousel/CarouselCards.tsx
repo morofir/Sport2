@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Button,
   Platform,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -28,7 +29,7 @@ const CarouselCards = () => {
   };
 
   return (
-    <View style={{flex: 1, alignItems: 'center'}}>
+    <SafeAreaView style={{flex: 1, alignItems: 'center'}}>
       <TouchableOpacity
         style={{padding: Platform.OS === 'ios' ? 15 : 5}}
         onPress={() => RootNavigation.navigate('AppNavigation')}>
@@ -71,7 +72,7 @@ const CarouselCards = () => {
       >
         <Text style={styles.letMeIn}>קחו אותי פנימה</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
