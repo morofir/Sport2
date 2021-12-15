@@ -23,7 +23,7 @@ static void InitializeFlipper(UIApplication *application) {
 }
 #endif
 @implementation AppDelegate
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions  
 {
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
@@ -39,15 +39,12 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
-  for (NSString* family in [UIFont familyNames])
-  {
-      NSLog(@"%@", family);
-
-      for (NSString* name in [UIFont fontNamesForFamilyName: family])
-      {
-          NSLog(@"Family name:  %@", name);
-      }
-  }
+ for (NSString *familyName in [UIFont familyNames]){
+  NSLog(@"Family name: %@", familyName);
+    for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+      NSLog(@"--Font name: %@", fontName);
+    }
+}
   
   // Set the splash screen to show by default.
   [RNSplashScreen show]; 

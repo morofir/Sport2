@@ -99,22 +99,21 @@ const Drawer = () => {
 };
 
 const styles = StyleSheet.create({
-  list: {fontFamily: 'NarkissBlock-Regular'},
   drawer: {
-    fontFamily: 'NarkissBlock-Regular',
     borderBottomWidth: 0.9,
     borderBottomColor: '#DCDCDC',
     height: 55,
     backgroundColor: '#F5F5F5',
   },
   titles: {
-    fontFamily: 'NarkissBlock-Regular',
+    // fontFamily: 'Narkis2',
+    // fontFamily: 'NarkissBlock-Regular',
     fontSize: 18,
-    fontWeight: '900', //bolder
+    fontWeight: 'bold', //bolder
     marginEnd: 10,
   },
   subTitles: {
-    fontFamily: 'NarkissBlock-Regular',
+    // fontFamily: 'Narkis2',
 
     fontSize: 16,
     borderBottomWidth: 0.4,

@@ -13,8 +13,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		26E2CE4CB4300F0F8186C54A /* libPods-Sport2-Sport2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 485D75E1B969CD79C92E92E3 /* libPods-Sport2-Sport2Tests.a */; };
+		59DB0B8BC28C4443BD3CD116 /* NarkissBlock-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 526DE61B96A84D41817960BC /* NarkissBlock-Regular.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8A22D68A2762392E007F5735 /* NarkissBlock-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A22D6892762392E007F5735 /* NarkissBlock-Regular.otf */; };
+		54DAAAD943154026B766F097 /* Narkis2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D5D2786D5EF47AE9CD269E1 /* Narkis2.otf */; };
+		EFD0D462D302454198361022 /* NarkissBlock-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C34F3E3435E4D8E973ECCFC /* NarkissBlock-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +41,31 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Sport2/main.m; sourceTree = "<group>"; };
 		18899EBA3AD02EF606C0E3A1 /* libPods-Sport2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sport2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		485D75E1B969CD79C92E92E3 /* libPods-Sport2-Sport2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sport2-Sport2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		526DE61B96A84D41817960BC /* NarkissBlock-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NarkissBlock-Regular.otf"; path = "../node_modules/react-native-vector-icons/Fonts/NarkissBlock-Regular.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Sport2/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8286E716B35DA4B24D99F510 /* Pods-Sport2-Sport2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport2-Sport2Tests.debug.xcconfig"; path = "Target Support Files/Pods-Sport2-Sport2Tests/Pods-Sport2-Sport2Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8A22D6892762392E007F5735 /* NarkissBlock-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NarkissBlock-Regular.otf"; path = "../assets/fonts/NarkissBlock-Regular.otf"; sourceTree = "<group>"; };
+		8A55488F2769F61C00F07212 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		8A5548902769F61C00F07212 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		8A5548912769F61C00F07212 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		8A5548922769F61C00F07212 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		8A5548932769F61C00F07212 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		8A5548942769F61C00F07212 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		8A5548952769F61C00F07212 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		8A5548962769F61C00F07212 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		8A5548972769F61C00F07212 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		8A5548982769F61C00F07212 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		8A5548992769F61C00F07212 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		8A55489A2769F61C00F07212 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		8A55489B2769F61C00F07212 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		8A55489C2769F61C00F07212 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		8A55489D2769F61C00F07212 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		8A55489E2769F61C00F07212 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		ABC945271733817E6CC6C1F1 /* Pods-Sport2-Sport2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport2-Sport2Tests.release.xcconfig"; path = "Target Support Files/Pods-Sport2-Sport2Tests/Pods-Sport2-Sport2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CDCC29D55A83366C2C79FBF2 /* Pods-Sport2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport2.release.xcconfig"; path = "Target Support Files/Pods-Sport2/Pods-Sport2.release.xcconfig"; sourceTree = "<group>"; };
 		D51CC7D00315F8120D983241 /* Pods-Sport2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport2.debug.xcconfig"; path = "Target Support Files/Pods-Sport2/Pods-Sport2.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		0D5D2786D5EF47AE9CD269E1 /* Narkis2.otf */ = {isa = PBXFileReference; name = "Narkis2.otf"; path = "../assets/fonts/Narkis2.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8C34F3E3435E4D8E973ECCFC /* NarkissBlock-Regular.otf */ = {isa = PBXFileReference; name = "NarkissBlock-Regular.otf"; path = "../assets/fonts/NarkissBlock-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +174,25 @@
 		C73DA6FA6B5C4FA7B1B05E4A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8A22D6892762392E007F5735 /* NarkissBlock-Regular.otf */,
+				8A55489A2769F61C00F07212 /* AntDesign.ttf */,
+				8A5548922769F61C00F07212 /* Entypo.ttf */,
+				8A55488F2769F61C00F07212 /* EvilIcons.ttf */,
+				8A55489B2769F61C00F07212 /* Feather.ttf */,
+				8A5548902769F61C00F07212 /* FontAwesome.ttf */,
+				8A55489E2769F61C00F07212 /* FontAwesome5_Brands.ttf */,
+				8A5548912769F61C00F07212 /* FontAwesome5_Regular.ttf */,
+				8A5548942769F61C00F07212 /* FontAwesome5_Solid.ttf */,
+				8A5548972769F61C00F07212 /* Fontisto.ttf */,
+				8A55489D2769F61C00F07212 /* Foundation.ttf */,
+				8A5548932769F61C00F07212 /* Ionicons.ttf */,
+				8A5548952769F61C00F07212 /* MaterialCommunityIcons.ttf */,
+				8A5548992769F61C00F07212 /* MaterialIcons.ttf */,
+				8A5548962769F61C00F07212 /* Octicons.ttf */,
+				8A55489C2769F61C00F07212 /* SimpleLineIcons.ttf */,
+				8A5548982769F61C00F07212 /* Zocial.ttf */,
+				526DE61B96A84D41817960BC /* NarkissBlock-Regular.otf */,
+				0D5D2786D5EF47AE9CD269E1 /* Narkis2.otf */,
+				8C34F3E3435E4D8E973ECCFC /* NarkissBlock-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -253,9 +291,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A22D68A2762392E007F5735 /* NarkissBlock-Regular.otf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				59DB0B8BC28C4443BD3CD116 /* NarkissBlock-Regular.otf in Resources */,
+				54DAAAD943154026B766F097 /* Narkis2.otf in Resources */,
+				EFD0D462D302454198361022 /* NarkissBlock-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +489,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Sport2Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,7 +514,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = Sport2Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
