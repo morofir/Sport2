@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Dimensions, Platform} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import LottieView from 'lottie-react-native';
 
 export const SLIDER_WIDTH = Dimensions.get('window').width;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   images: {
     width: 200,
-    height: Platform.OS === 'ios' ? windowHeight / 2 : windowHeight / 2.5,
+    height: windowHeight / 2,
     margin: 10,
     backgroundColor: 'rgb(237,238,240)',
     marginBottom: Platform.OS === 'ios' ? 20 : 5,

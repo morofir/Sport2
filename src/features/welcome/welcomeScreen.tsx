@@ -3,6 +3,7 @@ import {ActivityIndicator, Button, StyleSheet, Text, View} from 'react-native';
 import CarouselCards from '../Carousel/CarouselCards';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppNavigation from '../../navigation/AppNavigation';
+import * as RootNavigation from '../../navigation/RootNavigation';
 
 const welcomeScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -13,12 +14,16 @@ const welcomeScreen = () => {
       const value = await AsyncStorage.getItem('@viewdOnboarding');
       if (value !== null) {
         setviewdOnboarding(true);
+        navigateHome();
       }
     } catch (error) {
       console.log('error on boarding', error);
     } finally {
       setLoading(false); // finish indicator any way
     }
+  };
+  const navigateHome = () => {
+    RootNavigation.navigate('AppNavigation');
   };
 
   useEffect(() => {

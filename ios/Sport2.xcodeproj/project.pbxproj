@@ -13,10 +13,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		26E2CE4CB4300F0F8186C54A /* libPods-Sport2-Sport2Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 485D75E1B969CD79C92E92E3 /* libPods-Sport2-Sport2Tests.a */; };
-		59DB0B8BC28C4443BD3CD116 /* NarkissBlock-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 526DE61B96A84D41817960BC /* NarkissBlock-Regular.otf */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		54DAAAD943154026B766F097 /* Narkis2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D5D2786D5EF47AE9CD269E1 /* Narkis2.otf */; };
-		EFD0D462D302454198361022 /* NarkissBlock-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C34F3E3435E4D8E973ECCFC /* NarkissBlock-Regular.otf */; };
+		75B19C6BDA644123A7AFCCD1 /* NarkissBlock-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14FBE5095B3740108899AA7D /* NarkissBlock-Regular.otf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,15 +32,16 @@
 		00E356EE1AD99517003FC87E /* Sport2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sport2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* Sport2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sport2Tests.m; sourceTree = "<group>"; };
+		0D5D2786D5EF47AE9CD269E1 /* Narkis2.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Narkis2.otf; path = ../assets/fonts/Narkis2.otf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Sport2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sport2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Sport2/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Sport2/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Sport2/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sport2/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Sport2/main.m; sourceTree = "<group>"; };
+		14FBE5095B3740108899AA7D /* NarkissBlock-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NarkissBlock-Regular.otf"; path = "../assets/fonts/NarkissBlock-Regular.otf"; sourceTree = "<group>"; };
 		18899EBA3AD02EF606C0E3A1 /* libPods-Sport2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sport2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		485D75E1B969CD79C92E92E3 /* libPods-Sport2-Sport2Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sport2-Sport2Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		526DE61B96A84D41817960BC /* NarkissBlock-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "NarkissBlock-Regular.otf"; path = "../node_modules/react-native-vector-icons/Fonts/NarkissBlock-Regular.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Sport2/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8286E716B35DA4B24D99F510 /* Pods-Sport2-Sport2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport2-Sport2Tests.debug.xcconfig"; path = "Target Support Files/Pods-Sport2-Sport2Tests/Pods-Sport2-Sport2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A55488F2769F61C00F07212 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
@@ -64,8 +64,6 @@
 		CDCC29D55A83366C2C79FBF2 /* Pods-Sport2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport2.release.xcconfig"; path = "Target Support Files/Pods-Sport2/Pods-Sport2.release.xcconfig"; sourceTree = "<group>"; };
 		D51CC7D00315F8120D983241 /* Pods-Sport2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sport2.debug.xcconfig"; path = "Target Support Files/Pods-Sport2/Pods-Sport2.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		0D5D2786D5EF47AE9CD269E1 /* Narkis2.otf */ = {isa = PBXFileReference; name = "Narkis2.otf"; path = "../assets/fonts/Narkis2.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8C34F3E3435E4D8E973ECCFC /* NarkissBlock-Regular.otf */ = {isa = PBXFileReference; name = "NarkissBlock-Regular.otf"; path = "../assets/fonts/NarkissBlock-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,9 +188,8 @@
 				8A5548962769F61C00F07212 /* Octicons.ttf */,
 				8A55489C2769F61C00F07212 /* SimpleLineIcons.ttf */,
 				8A5548982769F61C00F07212 /* Zocial.ttf */,
-				526DE61B96A84D41817960BC /* NarkissBlock-Regular.otf */,
 				0D5D2786D5EF47AE9CD269E1 /* Narkis2.otf */,
-				8C34F3E3435E4D8E973ECCFC /* NarkissBlock-Regular.otf */,
+				14FBE5095B3740108899AA7D /* NarkissBlock-Regular.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -293,9 +290,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				59DB0B8BC28C4443BD3CD116 /* NarkissBlock-Regular.otf in Resources */,
 				54DAAAD943154026B766F097 /* Narkis2.otf in Resources */,
-				EFD0D462D302454198361022 /* NarkissBlock-Regular.otf in Resources */,
+				75B19C6BDA644123A7AFCCD1 /* NarkissBlock-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

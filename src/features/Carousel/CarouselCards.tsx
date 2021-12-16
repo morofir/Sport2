@@ -13,6 +13,7 @@ import CarouselCardItem, {SLIDER_WIDTH, ITEM_WIDTH} from './CarouselCardItem';
 import cdata from './cdata';
 import * as RootNavigation from '../../navigation/RootNavigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Animatable from 'react-native-animatable';
 
 const CarouselCards = () => {
   const [index, setIndex] = React.useState(0);
@@ -21,7 +22,6 @@ const CarouselCards = () => {
   const isPressedEntrance = async () => {
     try {
       await AsyncStorage.setItem('@viewdOnboarding', 'true');
-      console.log('navigate home!');
       RootNavigation.navigate('AppNavigation');
     } catch (error) {
       console.log(error);
@@ -66,12 +66,18 @@ const CarouselCards = () => {
         inactiveDotScale={0.6}
         tappableDots={true}
       />
-      <TouchableOpacity
-        style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}
-        onPress={isPressedEntrance} //clear async storage
-      >
-        <Text style={styles.letMeIn}>קחו אותי פנימה</Text>
-      </TouchableOpacity>
+
+      <Animatable.View animation="slideInUp">
+        <View
+          style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}>
+          <TouchableOpacity
+            onPress={isPressedEntrance} //clear async storage
+          >
+            <Text style={styles.letMeIn}>קח אותי פנימה!</Text>
+          </TouchableOpacity>
+          <Text style={styles.alreadyHave}>כבר יש לי משתמש</Text>
+        </View>
+      </Animatable.View>
     </SafeAreaView>
   );
 };
@@ -83,13 +89,20 @@ const styles = StyleSheet.create({
 
   RectangleShapeView: {
     width: 180,
-    height: 46,
+    height: 45,
     backgroundColor: 'rgb(2,247,13)',
-    marginBottom: 10,
+    marginBottom: 50,
   },
   letMeIn: {
     fontFamily: 'NarkissBlock-Regular',
     fontSize: 22,
+    alignSelf: 'center',
+    padding: 10,
+    fontWeight: 'bold',
+  },
+  alreadyHave: {
+    fontFamily: 'NarkissBlock-Regular',
+    fontSize: 16,
     alignSelf: 'center',
     padding: 10,
     fontWeight: 'bold',

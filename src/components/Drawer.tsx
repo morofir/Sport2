@@ -77,13 +77,14 @@ const Drawer = () => {
   return (
     <View>
       <FlatList
+        style={styles.list}
         data={categories}
         renderItem={renderItem}
         // contentContainerStyle={{padding: 10}}
-        keyExtractor={(item, index) => {
-          return item.id.toString();
+        keyExtractor={
+          (item, index) => item.id.toString()
           // return item.index.toString(); //warning why?
-        }}
+        }
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
@@ -99,6 +100,7 @@ const Drawer = () => {
 };
 
 const styles = StyleSheet.create({
+  list: {height: '90%'},
   drawer: {
     borderBottomWidth: 0.9,
     borderBottomColor: '#DCDCDC',
@@ -106,15 +108,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5F5F5',
   },
   titles: {
-    // fontFamily: 'Narkis2',
-    // fontFamily: 'NarkissBlock-Regular',
+    fontFamily: 'NarkissBlock-Regular',
     fontSize: 18,
     fontWeight: 'bold', //bolder
     marginEnd: 10,
   },
   subTitles: {
-    // fontFamily: 'Narkis2',
-
+    fontFamily: 'NarkissBlock-Regular',
     fontSize: 16,
     borderBottomWidth: 0.4,
     borderBottomColor: '#DCDCDC',
@@ -127,11 +127,14 @@ const styles = StyleSheet.create({
   listItem: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    backgroundColor: '#BEBEBE',
   },
   logo: {
     flex: 1,
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: -10,
+    padding: 5,
+    justifyContent: 'center',
   },
   byMoveo: {
     backgroundColor: '#F0F0F0',

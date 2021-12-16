@@ -2,24 +2,27 @@ import React, {useReducer, useState} from 'react';
 import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import ArrowRight from '../../assets/svg/ArrowRight';
 import * as RootNavigation from '../navigation/RootNavigation';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const Header = (props: {canGoBack: boolean; name: string}) => {
-  const [rerender, setRerender] = useState(false);
-
+const Header = (props: {canGoBack: boolean}) => {
+  const clearOnBoarding = async () => {
+    try {
+      await AsyncStorage.removeItem('@viewdOnboarding');
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleGoBack = () => {
     try {
-      setRerender(!rerender); //TODO delete
       RootNavigation.goBack();
-      setRerender(!rerender); //TODO delete
     } catch (error) {
       console.log('error: ', error);
     }
   };
-  console.log(props.name);
 
   return (
     <View style={styles.viewContainer}>
-      <TouchableOpacity onPress={() => RootNavigation.navigate('VOD')}>
+      <TouchableOpacity onPress={() => clearOnBoarding}>
         <Image
           style={styles.rightImage}
           source={require('../../assets/images/group3.png')}
@@ -42,19 +45,28 @@ const styles = StyleSheet.create({
   viewContainer: {
     padding: 28,
     flexDirection: 'row',
-    backgroundColor: 'rgb(20,20,20)',
+    backgroundColor: '#141414',
+    shadowColor: 'rgba(0, 0, 0, 0.5)',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowRadius: 4,
+    shadowOpacity: 1,
   },
   imageContainer: {
-    marginTop: 20,
+    marginTop: 25,
     marginStart: 90,
   },
   rightImage: {
     marginRight: 10,
-    marginTop: 20,
+    marginTop: 25,
+    width: 21,
+    height: 19,
   },
   arrowRight: {
-    marginTop: 20,
-    marginStart: 100,
+    marginTop: 25,
+    marginStart: 120,
   },
 });
 
