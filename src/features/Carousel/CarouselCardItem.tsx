@@ -1,13 +1,30 @@
-import React from 'react';
-import {View, Text, StyleSheet, Dimensions, Platform} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Platform,
+  TouchableOpacity,
+} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import LottieView from 'lottie-react-native';
+import * as Animatable from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as RootNavigation from '../../navigation/RootNavigation';
 
 export const SLIDER_WIDTH = Dimensions.get('window').width;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);
 export const windowHeight = Dimensions.get('window').height;
 
 const CarouselCardItem = ({item, index}: any) => {
+  const isPressedEntrance = async () => {
+    try {
+      await AsyncStorage.setItem('@viewdOnboarding', 'true');
+      RootNavigation.navigate('AppNavigation');
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <View style={styles.container} key={index}>
       <FastImage
@@ -23,6 +40,20 @@ const CarouselCardItem = ({item, index}: any) => {
       <View style={index === 2 ? styles.lineStyle : {}} />
 
       <Text style={styles.body}>{item.body}</Text>
+      <Animatable.View
+        animation="slideInUp"
+        duration={1000}
+        style={{marginStart: 20}}>
+        <View
+          style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}>
+          <TouchableOpacity
+            onPress={isPressedEntrance} //clear async storage
+          >
+            <Text style={styles.letMeIn}>קחו אותי פנימה!</Text>
+          </TouchableOpacity>
+          <Text style={styles.alreadyHave}>כבר יש לי משתמש</Text>
+        </View>
+      </Animatable.View>
     </View>
   );
 };
@@ -48,6 +79,7 @@ const styles = StyleSheet.create({
     fontFamily: 'NarkissBlock-Regular',
     alignItems: 'center',
     fontSize: 16,
+    marginBottom: 5,
   },
   images: {
     width: 200,
@@ -59,9 +91,30 @@ const styles = StyleSheet.create({
   lineStyle: {
     borderWidth: 1.5,
     borderColor: 'mediumspringgreen',
-    margin: 10,
+    margin: 5,
+    marginBottom: 20,
     marginLeft: 75,
     marginRight: 90,
+  },
+  RectangleShapeView: {
+    width: 180,
+    height: 45,
+    backgroundColor: 'rgb(2,227,113)',
+    marginBottom: 30,
+  },
+  letMeIn: {
+    fontFamily: 'NarkissBlock-Regular',
+    fontSize: 22,
+    alignSelf: 'center',
+    padding: 10,
+    fontWeight: 'bold',
+  },
+  alreadyHave: {
+    fontFamily: 'NarkissBlock-Regular',
+    fontSize: 16,
+    alignSelf: 'center',
+    padding: 10,
+    fontWeight: 'bold',
   },
 });
 

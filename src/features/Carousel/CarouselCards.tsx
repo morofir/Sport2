@@ -11,22 +11,13 @@ import {
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import CarouselCardItem, {SLIDER_WIDTH, ITEM_WIDTH} from './CarouselCardItem';
 import cdata from './cdata';
-import * as RootNavigation from '../../navigation/RootNavigation';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Animatable from 'react-native-animatable';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as RootNavigation from '../../navigation/RootNavigation';
 
 const CarouselCards = () => {
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef(null);
-
-  const isPressedEntrance = async () => {
-    try {
-      await AsyncStorage.setItem('@viewdOnboarding', 'true');
-      RootNavigation.navigate('AppNavigation');
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <SafeAreaView style={{flex: 1, alignItems: 'center'}}>
@@ -43,13 +34,17 @@ const CarouselCards = () => {
       </TouchableOpacity>
       <Carousel
         layout="default"
+        contentContainerCustomStyle={{direction: 'ltr'}}
         ref={isCarousel}
         data={cdata}
+        onSnapToItem={index => setIndex(index)}
         renderItem={CarouselCardItem}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
-        onSnapToItem={index => setIndex(index)}
         useScrollView={true}
+        autoplay={true}
+        autoplayDelay={3000}
+        autoplayInterval={3000}
       />
       <Pagination
         dotsLength={cdata.length}
@@ -66,18 +61,6 @@ const CarouselCards = () => {
         inactiveDotScale={0.6}
         tappableDots={true}
       />
-
-      <Animatable.View animation="slideInUp">
-        <View
-          style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}>
-          <TouchableOpacity
-            onPress={isPressedEntrance} //clear async storage
-          >
-            <Text style={styles.letMeIn}>קח אותי פנימה!</Text>
-          </TouchableOpacity>
-          <Text style={styles.alreadyHave}>כבר יש לי משתמש</Text>
-        </View>
-      </Animatable.View>
     </SafeAreaView>
   );
 };
@@ -86,12 +69,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-
   RectangleShapeView: {
     width: 180,
     height: 45,
-    backgroundColor: 'rgb(2,247,13)',
-    marginBottom: 50,
+    backgroundColor: 'rgb(2,227,113)',
+    marginBottom: 30,
   },
   letMeIn: {
     fontFamily: 'NarkissBlock-Regular',

@@ -51,6 +51,7 @@ const Drawer = () => {
       title={''}
       right={() => <Text style={styles.titles}>{item.title}</Text>}
       id={item.id}
+      key={item.id}
       //IF child exist have an arrow
       left={() =>
         item.children.length > 0 ? (
@@ -64,6 +65,7 @@ const Drawer = () => {
           <List.Item
             style={styles.listItem}
             title={''}
+            key={item.id + '-' + child.id}
             right={() => <Text style={styles.subTitles}>{child.title}</Text>}
           />
         );
@@ -71,9 +73,6 @@ const Drawer = () => {
     </List.Accordion>
   );
 
-  if (loading) {
-    return <ActivityIndicator size="large" style={styles.loader} />;
-  }
   return (
     <View>
       <FlatList
@@ -81,10 +80,7 @@ const Drawer = () => {
         data={categories}
         renderItem={renderItem}
         // contentContainerStyle={{padding: 10}}
-        keyExtractor={
-          (item, index) => item.id.toString()
-          // return item.index.toString(); //warning why?
-        }
+        keyExtractor={(item, index) => item.id.toString()}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
@@ -140,6 +136,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F0F0F0',
     margin: 5,
     justifyContent: 'center',
+    opacity: 0.45,
   },
 });
 export default Drawer;

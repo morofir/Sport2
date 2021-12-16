@@ -11,9 +11,11 @@ const Header = (props: {canGoBack: boolean}) => {
     } catch (error) {
       console.log(error);
     }
+    RootNavigation.navigate('VOD');
   };
   const handleGoBack = () => {
     try {
+      //TODO POP CHECK LAST ITEM IS NOT WELCOME SCREEN!!
       RootNavigation.goBack();
     } catch (error) {
       console.log('error: ', error);
@@ -22,7 +24,7 @@ const Header = (props: {canGoBack: boolean}) => {
 
   return (
     <View style={styles.viewContainer}>
-      <TouchableOpacity onPress={() => clearOnBoarding}>
+      <TouchableOpacity onPress={clearOnBoarding}>
         <Image
           style={styles.rightImage}
           source={require('../../assets/images/group3.png')}

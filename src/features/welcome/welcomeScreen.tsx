@@ -4,6 +4,9 @@ import CarouselCards from '../Carousel/CarouselCards';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AppNavigation from '../../navigation/AppNavigation';
 import * as RootNavigation from '../../navigation/RootNavigation';
+import HomeScreen from '../homeScreen/Home';
+import App from '../../App';
+import Header from '../../components/Header';
 
 const welcomeScreen = () => {
   const [loading, setLoading] = useState(true);
