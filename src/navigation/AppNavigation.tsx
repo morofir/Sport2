@@ -1,6 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
+import {StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import More from '../features/more/MoreScreen';
 import HomeScreen from '../features/homeScreen/Home';
@@ -18,6 +17,7 @@ const AppNavigation = () => {
   return (
     <Tab.Navigator
       initialRouteName={'בית'}
+      backBehavior="none" //go to the last tab (on arrow)
       screenOptions={() => ({
         tabBarStyle: {
           backgroundColor: 'rgb(20,20,20)',

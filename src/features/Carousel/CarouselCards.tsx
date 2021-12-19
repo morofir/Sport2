@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {
   Button,
   Platform,
@@ -18,6 +18,22 @@ import * as RootNavigation from '../../navigation/RootNavigation';
 const CarouselCards = () => {
   const [index, setIndex] = React.useState(0);
   const isCarousel = React.useRef(null);
+  const animationRef = useRef(null);
+
+  useEffect(() => {
+    if (animationRef) {
+      animationRef.current?.animate('slideInUp', 1000, '');
+    }
+  });
+
+  const isPressedEntrance = async () => {
+    try {
+      await AsyncStorage.setItem('@viewdOnboarding', 'true');
+      RootNavigation.navigate('AppNavigation');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <SafeAreaView style={{flex: 1, alignItems: 'center'}}>
@@ -27,6 +43,7 @@ const CarouselCards = () => {
         <Text
           style={{
             fontSize: 18,
+            position: 'absolute',
             fontFamily: 'NarkissBlock-Regular',
           }}>
           דלג
@@ -61,6 +78,20 @@ const CarouselCards = () => {
         inactiveDotScale={0.6}
         tappableDots={true}
       />
+
+      <Animatable.View
+        animation="slideInUp"
+        duration={1000}
+        ref={animationRef}
+        style={{marginStart: 20}}>
+        <View
+          style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}>
+          <TouchableOpacity onPress={isPressedEntrance}>
+            <Text style={styles.letMeIn}>קחו אותי פנימה!</Text>
+          </TouchableOpacity>
+          <Text style={styles.alreadyHave}>כבר יש לי משתמש</Text>
+        </View>
+      </Animatable.View>
     </SafeAreaView>
   );
 };

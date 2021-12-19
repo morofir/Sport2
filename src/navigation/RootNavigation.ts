@@ -2,6 +2,7 @@ import React from 'react';
 import {
   createNavigationContainerRef,
   StackActions,
+  StackActionType,
 } from '@react-navigation/native';
 import {CommonActions} from '@react-navigation/native';
 import {BackHandler} from 'react-native';
@@ -29,3 +30,9 @@ export function goBack() {
     console.error(error); //check root screen and handle TODO
   }
 }
+// export function pop(){
+// try{
+//   navigationRef.current?.isReady
+// }catch (error) {
+//   console.error(error);
+// }

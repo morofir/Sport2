@@ -11,6 +11,7 @@ import {navigationRef, goBack} from './navigation/RootNavigation';
 import welcomeScreen from './features/welcome/welcomeScreen';
 import {createNativeStackNavigator as navigatorStack} from '@react-navigation/native-stack';
 import insideScreen from './features/insideScreen/insideScreen';
+import {useRoute} from '@react-navigation/native';
 
 const Stack = navigatorStack();
 
@@ -51,7 +52,7 @@ export default class App extends React.Component {
             <Stack.Screen
               component={welcomeScreen}
               name="welcomeScreen"
-              options={{headerShown: false}}
+              options={{headerShown: true}}
             />
             <Stack.Screen
               component={AppNavigation}

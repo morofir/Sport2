@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -6,6 +6,9 @@ import {
   Dimensions,
   Platform,
   TouchableOpacity,
+  Animated,
+  TouchableWithoutFeedbackBase,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import * as Animatable from 'react-native-animatable';
@@ -17,14 +20,6 @@ export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);
 export const windowHeight = Dimensions.get('window').height;
 
 const CarouselCardItem = ({item, index}: any) => {
-  const isPressedEntrance = async () => {
-    try {
-      await AsyncStorage.setItem('@viewdOnboarding', 'true');
-      RootNavigation.navigate('AppNavigation');
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <View style={styles.container} key={index}>
       <FastImage
@@ -40,20 +35,6 @@ const CarouselCardItem = ({item, index}: any) => {
       <View style={index === 2 ? styles.lineStyle : {}} />
 
       <Text style={styles.body}>{item.body}</Text>
-      <Animatable.View
-        animation="slideInUp"
-        duration={1000}
-        style={{marginStart: 20}}>
-        <View
-          style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}>
-          <TouchableOpacity
-            onPress={isPressedEntrance} //clear async storage
-          >
-            <Text style={styles.letMeIn}>קחו אותי פנימה!</Text>
-          </TouchableOpacity>
-          <Text style={styles.alreadyHave}>כבר יש לי משתמש</Text>
-        </View>
-      </Animatable.View>
     </View>
   );
 };
@@ -72,7 +53,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingLeft: 20,
     fontFamily: 'NarkissBlock-Regular',
-    marginBottom: 20,
+    marginBottom: Platform.OS === 'ios' ? 20 : 10,
   },
   body: {
     color: 'black',
@@ -83,7 +64,7 @@ const styles = StyleSheet.create({
   },
   images: {
     width: 200,
-    height: windowHeight / 2,
+    height: windowHeight / 2.3,
     margin: 10,
     backgroundColor: 'rgb(237,238,240)',
     marginBottom: Platform.OS === 'ios' ? 20 : 5,
@@ -92,7 +73,6 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: 'mediumspringgreen',
     margin: 5,
-    marginBottom: 20,
     marginLeft: 75,
     marginRight: 90,
   },
@@ -100,7 +80,6 @@ const styles = StyleSheet.create({
     width: 180,
     height: 45,
     backgroundColor: 'rgb(2,227,113)',
-    marginBottom: 30,
   },
   letMeIn: {
     fontFamily: 'NarkissBlock-Regular',

@@ -1,8 +1,17 @@
 import React, {useReducer, useState} from 'react';
-import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  Platform,
+} from 'react-native';
 import ArrowRight from '../../assets/svg/ArrowRight';
 import * as RootNavigation from '../navigation/RootNavigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {StackActions} from '@react-navigation/native';
+import {navigationRef} from '../navigation/RootNavigation';
 
 const Header = (props: {canGoBack: boolean}) => {
   const clearOnBoarding = async () => {
@@ -16,7 +25,7 @@ const Header = (props: {canGoBack: boolean}) => {
   const handleGoBack = () => {
     try {
       //TODO POP CHECK LAST ITEM IS NOT WELCOME SCREEN!!
-      RootNavigation.goBack();
+      navigationRef.current?.isReady() ? navigationRef.goBack() : false;
     } catch (error) {
       console.log('error: ', error);
     }
@@ -45,8 +54,9 @@ const Header = (props: {canGoBack: boolean}) => {
 };
 const styles = StyleSheet.create({
   viewContainer: {
-    padding: 28,
+    padding: Platform.OS === 'ios' ? 28 : 20,
     flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#141414',
     shadowColor: 'rgba(0, 0, 0, 0.5)',
     shadowOffset: {
@@ -58,7 +68,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     marginTop: 25,
-    marginStart: 90,
+    marginStart: Platform.OS === 'ios' ? 100 : 120,
   },
   rightImage: {
     marginRight: 10,

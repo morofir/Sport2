@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   listItem: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    backgroundColor: '#BEBEBE',
+    backgroundColor: 'rgb(230, 230, 230)',
   },
   logo: {
     flex: 1,
