@@ -1,16 +1,15 @@
-import React, {useReducer, useState} from 'react';
+import React from 'react';
 import {
   View,
   StyleSheet,
   Image,
   TouchableOpacity,
-  Dimensions,
   Platform,
 } from 'react-native';
 import ArrowRight from '../../assets/svg/ArrowRight';
 import * as RootNavigation from '../navigation/RootNavigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {StackActions} from '@react-navigation/native';
+
 import {navigationRef} from '../navigation/RootNavigation';
 
 const Header = (props: {canGoBack: boolean}) => {
@@ -20,7 +19,7 @@ const Header = (props: {canGoBack: boolean}) => {
     } catch (error) {
       console.log(error);
     }
-    RootNavigation.navigate('VOD');
+    RootNavigation.navigate('loginScreen');
   };
   const handleGoBack = () => {
     try {
@@ -78,7 +77,7 @@ const styles = StyleSheet.create({
   },
   arrowRight: {
     marginTop: 25,
-    marginStart: 120,
+    marginStart: 110,
   },
 });
 

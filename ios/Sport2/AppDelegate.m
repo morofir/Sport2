@@ -1,5 +1,5 @@
-
 #import "AppDelegate.h"
+#import <Firebase.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -23,8 +23,11 @@ static void InitializeFlipper(UIApplication *application) {
 }
 #endif
 @implementation AppDelegate
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions  
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+  if ([FIRApp defaultApp] == nil) {
+        [FIRApp configure];
+      }
+  
 #ifdef FB_SONARKIT_ENABLED
   InitializeFlipper(application);
 #endif
@@ -39,12 +42,10 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
- for (NSString *familyName in [UIFont familyNames]){
-  NSLog(@"Family name: %@", familyName);
-    for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-      NSLog(@"--Font name: %@", fontName);
-    }
-}
+// for (NSString *familyName in [UIFont familyNames]){
+//  NSLog(@"Family name: %@", familyName);
+//   
+//}
   
   // Set the splash screen to show by default.
   [RNSplashScreen show]; 

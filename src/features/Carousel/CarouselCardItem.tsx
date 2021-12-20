@@ -11,9 +11,6 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
-import * as Animatable from 'react-native-animatable';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import * as RootNavigation from '../../navigation/RootNavigation';
 
 export const SLIDER_WIDTH = Dimensions.get('window').width;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8);

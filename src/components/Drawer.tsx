@@ -79,12 +79,12 @@ const Drawer = () => {
         style={styles.list}
         data={categories}
         renderItem={renderItem}
-        // contentContainerStyle={{padding: 10}}
         keyExtractor={(item, index) => item.id.toString()}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       />
+
       <View style={styles.logo}>
         <Image
           style={styles.byMoveo}
@@ -127,6 +127,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     flex: 1,
+    backgroundColor: 'rgb(230, 230, 230)',
+
     alignItems: 'center',
     marginTop: -10,
     padding: 5,

@@ -36,7 +36,7 @@ const CarouselCards = () => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center'}}>
+    <SafeAreaView style={{flex: 1}}>
       <TouchableOpacity
         style={{padding: Platform.OS === 'ios' ? 15 : 5}}
         onPress={() => RootNavigation.navigate('AppNavigation')}>
@@ -45,6 +45,7 @@ const CarouselCards = () => {
             fontSize: 18,
             position: 'absolute',
             fontFamily: 'NarkissBlock-Regular',
+            padding: 18,
           }}>
           דלג
         </Text>
@@ -83,7 +84,7 @@ const CarouselCards = () => {
         animation="slideInUp"
         duration={1000}
         ref={animationRef}
-        style={{marginStart: 20}}>
+        style={{marginStart: 20, alignItems: 'center'}}>
         <View
           style={index === 2 ? styles.RectangleShapeView : {display: 'none'}}>
           <TouchableOpacity onPress={isPressedEntrance}>

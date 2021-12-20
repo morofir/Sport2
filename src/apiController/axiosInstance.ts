@@ -20,7 +20,7 @@ axiosInstance.interceptors.response.use(
       duration: 5000,
       floating: true,
       onPress: () => {
-        Linking.openSettings(); //todo- ios not possible?
+        Linking.openSettings(); //TODO - ios not possible?
       },
     });
   },

@@ -18,6 +18,8 @@ target 'Sport2' do
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
 
+  pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
+
   target 'Sport2Tests' do
     inherit! :complete
     # Pods for testing

@@ -8,11 +8,10 @@ import {getCategoriesRepo} from '../../../repositories/categoriesRepo';
 import {categoryData, childData} from '../../../models/moreModel';
 
 //createAsyncThunk will then generate three action creators: pending, fulfilled, and rejected.
-//this is a "thunk"
 export const fetchCategoryData = createAsyncThunk(
   'category/categories',
   async () => {
-    const {data} = await getCategoriesRepo(); //
+    const {data} = await getCategoriesRepo();
 
     return (await data).categories as categoryData[];
   },
@@ -34,8 +33,6 @@ const usersSlice = createSlice({
     builder.addCase(fetchCategoryData.fulfilled, (state, action) => {
       categoryAdapter.setAll(state, action.payload);
       state.loading = false;
-
-      // categoryAdapter.
     });
 
     builder.addCase(fetchCategoryData.rejected, (state, action) => {

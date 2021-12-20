@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "308836314331",
+    "project_id": "sport1-50197",
+    "storage_bucket": "sport1-50197.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308836314331:android:4e6ab1bdb9ba8ddabaf0fe",
+        "android_client_info": {
+          "package_name": "com.moveo.sport1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308836314331-6keaaieu0hn61stggca0fkq02hch456o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdi8V2rQM3Ma-vhYtUB08hXLtjnLlc9qc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308836314331-6keaaieu0hn61stggca0fkq02hch456o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308836314331:android:4699e8e16f959d53baf0fe",
+        "android_client_info": {
+          "package_name": "com.sport2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308836314331-6keaaieu0hn61stggca0fkq02hch456o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdi8V2rQM3Ma-vhYtUB08hXLtjnLlc9qc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308836314331-6keaaieu0hn61stggca0fkq02hch456o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

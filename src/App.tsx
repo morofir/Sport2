@@ -1,5 +1,5 @@
-import React from 'react';
-import {Platform, StatusBar, StyleSheet} from 'react-native';
+import React, {useContext} from 'react';
+import {Platform, StatusBar, StyleSheet, Text, View} from 'react-native';
 import Header from './components/Header';
 import {Provider} from 'react-redux';
 import {Store} from './store/Store';
@@ -11,28 +11,49 @@ import {navigationRef, goBack} from './navigation/RootNavigation';
 import welcomeScreen from './features/welcome/welcomeScreen';
 import {createNativeStackNavigator as navigatorStack} from '@react-navigation/native-stack';
 import insideScreen from './features/insideScreen/insideScreen';
-import {useRoute} from '@react-navigation/native';
+import loginScreen from './features/authScreens/loginScreen';
+import LoginProvider, {LoginContext} from './utils/LoginProvider';
+import registerScreen from './features/authScreens/registerScreen';
+import auth from '@react-native-firebase/auth';
+import loadingScreen from './features/authScreens/loadingScreen';
+import {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
 const Stack = navigatorStack();
 
-export default class App extends React.Component {
-  render() {
-    if (Platform.OS) {
-      StatusBar.setBarStyle('light-content');
-    }
-    const onNavigationReady = () => {
-      SplashScreen.hide(); // hide the splash screen after navigation ready
-    };
-    const route = navigationRef.current?.getRootState()
-      ? navigationRef.getCurrentRoute()?.name
-      : 'no';
+export default function App(this: any, props: any) {
+  if (Platform.OS) {
+    StatusBar.setBarStyle('light-content');
+  }
+  const onNavigationReady = () => {
+    SplashScreen.hide(); // hide the splash screen after navigation ready
+  };
+  const {user, isLoading} = useContext(LoginContext);
+  console.log('user: ', user);
+  console.log('isLoading: ', isLoading);
 
+  //TODO usestate to check if user is logged on
+  const auth1 = auth().onAuthStateChanged(
+    (user: FirebaseAuthTypes.User | null) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        console.log('uid: ', uid);
+        // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    },
+  );
+
+  return (
     //safearea view?
-    return (
-      <NavigationContainer onReady={onNavigationReady} ref={navigationRef}>
-        <Provider store={Store}>
-          <FlashMessage position="top" />
-          {/* <Header canGoBack={true} /> */}
+
+    <NavigationContainer onReady={onNavigationReady} ref={navigationRef}>
+      <Provider store={Store}>
+        <FlashMessage position="top" />
+        <LoginProvider>
           <Stack.Navigator
             initialRouteName="Splash"
             screenOptions={{
@@ -49,11 +70,20 @@ export default class App extends React.Component {
                 />
               ),
             }}>
-            <Stack.Screen
+            {/* <Stack.Screen
               component={welcomeScreen}
               name="welcomeScreen"
               options={{headerShown: true}}
-            />
+            /> */}
+
+            {isLoading ? (
+              <Stack.Screen component={loadingScreen} name="loadingScreen" />
+            ) : user ? (
+              <Stack.Screen component={AppNavigation} name="AppNavigation" />
+            ) : (
+              <Stack.Screen component={loginScreen} name="loginScreen" />
+            )}
+
             <Stack.Screen
               component={AppNavigation}
               name="AppNavigation"
@@ -64,11 +94,17 @@ export default class App extends React.Component {
               name="insideScreen"
               options={{headerShown: true}}
             />
+
+            <Stack.Screen
+              component={registerScreen}
+              name="registerScreen"
+              options={{headerShown: true}}
+            />
           </Stack.Navigator>
-        </Provider>
-      </NavigationContainer>
-    );
-  }
+        </LoginProvider>
+      </Provider>
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({});
