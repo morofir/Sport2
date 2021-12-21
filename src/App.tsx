@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {Platform, StatusBar, StyleSheet, Text, View} from 'react-native';
 import Header from './components/Header';
 import {Provider} from 'react-redux';
@@ -30,7 +30,7 @@ export default function App(this: any, props: any) {
   const {user, isLoading} = useContext(LoginContext);
   console.log('user: ', user);
   console.log('isLoading: ', isLoading);
-
+  const [loggedIn, setLoggedIn] = useState(false);
   //TODO usestate to check if user is logged on
   const auth1 = auth().onAuthStateChanged(
     (user: FirebaseAuthTypes.User | null) => {
@@ -39,8 +39,12 @@ export default function App(this: any, props: any) {
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
         console.log('uid: ', uid);
+        setLoggedIn(true);
+
         // ...
       } else {
+        setLoggedIn(false);
+
         // User is signed out
         // ...
       }
@@ -78,17 +82,17 @@ export default function App(this: any, props: any) {
 
             {isLoading ? (
               <Stack.Screen component={loadingScreen} name="loadingScreen" />
-            ) : user ? (
+            ) : loggedIn ? (
               <Stack.Screen component={AppNavigation} name="AppNavigation" />
             ) : (
               <Stack.Screen component={loginScreen} name="loginScreen" />
             )}
 
-            <Stack.Screen
+            {/* <Stack.Screen
               component={AppNavigation}
               name="AppNavigation"
               options={{headerShown: true}}
-            />
+            /> */}
             <Stack.Screen
               component={insideScreen}
               name="insideScreen"
