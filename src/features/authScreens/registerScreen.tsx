@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     fontFamily: 'NarkissBlock-Regular',
+    marginBottom: 20,
   },
   checkbox: {
     fontSize: 14,

@@ -1,8 +1,22 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import auth from '@react-native-firebase/auth';
+import * as RootNavigation from '../../navigation/RootNavigation';
 
 const LiveScreen = () => {
-  return <Text>live</Text>;
+  return (
+    <View>
+      <Text>live</Text>
+      <TouchableOpacity
+        onPress={() =>
+          auth()
+            .signOut()
+            .then(() => RootNavigation.navigate('loginScreen'))
+        }>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}>LOG OUT!</Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 const styles = StyleSheet.create({});
 

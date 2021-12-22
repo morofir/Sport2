@@ -28,8 +28,7 @@ export default function App(this: any, props: any) {
     SplashScreen.hide(); // hide the splash screen after navigation ready
   };
   const {user, isLoading} = useContext(LoginContext);
-  console.log('user: ', user);
-  console.log('isLoading: ', isLoading);
+
   const [loggedIn, setLoggedIn] = useState(false);
   //TODO usestate to check if user is logged on
   const auth1 = auth().onAuthStateChanged(
@@ -40,8 +39,6 @@ export default function App(this: any, props: any) {
         const uid = user.uid;
         console.log('uid: ', uid);
         setLoggedIn(true);
-
-        // ...
       } else {
         setLoggedIn(false);
 
@@ -74,14 +71,8 @@ export default function App(this: any, props: any) {
                 />
               ),
             }}>
-            {/* <Stack.Screen
-              component={welcomeScreen}
-              name="welcomeScreen"
-              options={{headerShown: true}}
-            /> */}
-
             {isLoading ? (
-              <Stack.Screen component={loadingScreen} name="loadingScreen" />
+              <Stack.Screen component={welcomeScreen} name="welcomeScreen" />
             ) : loggedIn ? (
               <Stack.Screen component={AppNavigation} name="AppNavigation" />
             ) : (
@@ -89,10 +80,11 @@ export default function App(this: any, props: any) {
             )}
 
             {/* <Stack.Screen
-              component={AppNavigation}
-              name="AppNavigation"
+              component={welcomeScreen}
+              name="welcomeScreen"
               options={{headerShown: true}}
             /> */}
+
             <Stack.Screen
               component={insideScreen}
               name="insideScreen"

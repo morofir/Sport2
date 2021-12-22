@@ -15,7 +15,6 @@ const loginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [register, setRegister] = useState(false);
   const registerPage = () => {
     RootNavigation.navigate('registerScreen');
   };
